@@ -4,6 +4,7 @@ import 'firebase/compat/firestore';
 const firebaseApp = firebase.initializeApp({    
     apiKey: "AIzaSyAVLVc4ArIJa-Ar4eENsZZE0fOWK7S1BT8",
     authDomain: "facebook-messenger-clone-38b78.firebaseapp.com",
+    databaseURL: "https://facebook-messenger-clone-38b78-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "facebook-messenger-clone-38b78",
     storageBucket: "facebook-messenger-clone-38b78.appspot.com",
     messagingSenderId: "883968914563",
