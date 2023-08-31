@@ -3,9 +3,10 @@ import { Button, FormControl,InputLabel, Input } from '@mui/material';
 import './App.css';
 import Message from './Message';
 import db from './firebase';
-//import firebase from 'firebase';        //this is deprecated so i used import statement with compat(in nextline)
+//import firebase from 'firebase';        //this is deprecated so i used import statement with compat(in next line)
 import firebase from 'firebase/compat/app';
 import FlipMove from 'react-flip-move';                               
+//import SendIcon from '@mui/icons-material/Send';
 
 function App() {
 
@@ -23,12 +24,12 @@ useEffect(() =>  {
 setMessages(snapshot.docs.map(doc=>({id: doc.id, message: doc.data()})))  
 
   });
-}, [] )
+}, [] );
 
 
 useEffect(() => {
   setUsername(prompt('please enter your name'));
-},[])
+},[]);
 
 
   const sendMessage = (event) =>{ 
@@ -54,10 +55,11 @@ useEffect(() => {
 
   return (
     <div className="App">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Messenger_logo_2018.svg?w=100&h=100" alt="messenger logo" className="logo"/>
   <h1>Hlo India</h1>
   <h2>welcome  {username}</h2>
 
-<form>
+<form className="app__form">
 <FormControl>
   <InputLabel >Enter a message</InputLabel>
   <Input  value ={input} onChange={event => setInput(event.target.value)} />
