@@ -8,6 +8,7 @@ import FlipMove from 'react-flip-move';
 import SendIcon from '@mui/icons-material/Send';
 import { IconButton } from '@mui/material';
 
+console.warn = () => {};
 
 function App() {
 
@@ -20,10 +21,9 @@ function App() {
 
 useEffect(() =>  {
   db.collection("messages")
-  .orderBy("timestamp","desc")
-  .onSnapshot(snapshot =>{
-setMessages(snapshot.docs.map(doc=>({id: doc.id, message: doc.data()})))  
-
+     .orderBy("timestamp","desc")
+    .onSnapshot(snapshot =>{
+   setMessages(snapshot.docs.map(doc=>({id: doc.id, message: doc.data()})))  
   });
 }, [] );
 
@@ -54,7 +54,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Messenger_logo_2018.svg?w=100&h=100" alt="messenger logo" className="logo"/>
+      <img src="https://ww1.freelogovectors.net/wp-content/uploads/2023/03/facebook_messenger_logo-freelogovectors.net_.png?lossy=1&w=2560&ssl=1" alt="messenger logo" className="logo"/>
   <h1>Hlo India</h1>
   <h2>welcome  {username}</h2>
 
