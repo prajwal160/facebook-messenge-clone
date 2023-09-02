@@ -1,9 +1,8 @@
 import React,{useState, useEffect} from 'react';
-import { FormControl, Input } from '@mui/material';    //InputLabel,Button, no more needed so removed them
+import { FormControl, Input } from '@mui/material';    
 import './App.css';
 import Message from './Message';
 import db from './firebase';
-//import firebase from 'firebase';        //this is deprecated so i used import statement with compat(in next line)
 import firebase from 'firebase/compat/app';
 import FlipMove from 'react-flip-move';                               
 import SendIcon from '@mui/icons-material/Send';
@@ -47,9 +46,7 @@ useEffect(() => {
     .catch((error) => {
       console.error("Error adding document: ", error);
     });
-    // all the logic to send a message goes
-    // setMessages ([...messages, {username: username, message: input}
-    // ]); 
+
   setInput('');
   }
   console.log(input);
@@ -64,16 +61,12 @@ useEffect(() => {
 
 <form className="app__form">
 <FormControl className="app__formControl">
-  {/* <InputLabel >Enter a message</InputLabel> */}
   <Input className="app__input" placeholder="Enter a message" value ={input} onChange={event => setInput(event.target.value)} />
 <IconButton className="app__iconButton" disabled={!input} variant="contained" type="submit" onClick={sendMessage}>
 <SendIcon/>
 </IconButton>
-  {/* <Button disabled={!input} variant="contained" type="submit" onClick={sendMessage}>Send message</Button> */}
 </FormControl>
 
-{/* <input value ={input} onChange={event => setInput(event.target.value)}/> */}
-  {/* <Button disabled={!input} variant="contained" type="submit" onClick={sendMessage}>Send message</Button> */}
 </form>
 
 
@@ -82,13 +75,12 @@ useEffect(() => {
   {
   messages.map(({id, message}) => (
     <Message key={id} username={username} message={message}/>
-   // <p>{message}</p>
   ))
   }
 </FlipMove>
   
 
-  
+
     </div>
   );
 }
