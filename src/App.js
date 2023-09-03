@@ -7,8 +7,6 @@ import firebase from 'firebase/compat/app';
 import SendIcon from '@mui/icons-material/Send';
 import { IconButton } from '@mui/material';
 
-console.warn = () => {};
-
 function App() {
 
   const[input, setInput] = useState('');
