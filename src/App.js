@@ -3,8 +3,7 @@ import { FormControl, Input } from '@mui/material';
 import './App.css';
 import Message from './Message';
 import db from './firebase';
-import firebase from 'firebase/compat/app';
-//import FlipMove from 'react-flip-move';                               
+import firebase from 'firebase/compat/app';                            
 import SendIcon from '@mui/icons-material/Send';
 import { IconButton } from '@mui/material';
 
@@ -69,13 +68,11 @@ useEffect(() => {
 
 </form>
 
-{/* <FlipMove>  */}
   {
   messages.map(({id, message}) => (
     <Message key={id} username={username} message={message}/>
   ))
   }
-{/* </FlipMove>  */}
     </div>
   );
 }
