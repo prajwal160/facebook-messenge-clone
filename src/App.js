@@ -4,7 +4,7 @@ import './App.css';
 import Message from './Message';
 import db from './firebase';
 import firebase from 'firebase/compat/app';
-import FlipMove from 'react-flip-move';                               
+//import FlipMove from 'react-flip-move';                               
 import SendIcon from '@mui/icons-material/Send';
 import { IconButton } from '@mui/material';
 
@@ -21,9 +21,9 @@ function App() {
 
 useEffect(() =>  {
   db.collection("messages")
-     .orderBy("timestamp","desc")
+    .orderBy("timestamp","desc")
     .onSnapshot(snapshot =>{
-   setMessages(snapshot.docs.map(doc=>({id: doc.id, message: doc.data()})))  
+  setMessages(snapshot.docs.map(doc=>({id: doc.id, message: doc.data()})))  
   });
 }, [] );
 
@@ -69,18 +69,13 @@ useEffect(() => {
 
 </form>
 
-
-
-<FlipMove>
+{/* <FlipMove>  */}
   {
   messages.map(({id, message}) => (
     <Message key={id} username={username} message={message}/>
   ))
   }
-</FlipMove>
-  
-
-
+{/* </FlipMove>  */}
     </div>
   );
 }
