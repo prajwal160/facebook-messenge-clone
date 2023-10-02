@@ -51,7 +51,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <img src="https://ww1.freelogovectors.net/wp-content/uploads/2023/03/facebook_messenger_logo-freelogovectors.net_.png?lossy=1&w=2560&ssl=1" alt="messenger logo" className="logo"/>
+      <img src="/images/facebook.png" alt="messenger logo" className="logo"/>
   <h1>facebook-messenger</h1>
   <h2>welcome  {username}</h2>
 
